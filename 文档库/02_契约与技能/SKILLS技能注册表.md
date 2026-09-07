@@ -29,8 +29,8 @@
 | ① | `talent.analyze` | 招聘需求处理 | A 招聘分析师 | `jd{title,responsibilities[],hard_requirements[],nice_to_have[]}`、`persona{core_competencies[],soft_traits[],culture_fit_hint}`、`demand`(澄清陈述/追问清单)、`reason` | demand.clarify · jd.generate · persona.build |
 | ② | `resume.screen` | 简历解析与初筛 | B 简历猎手 | `resume{name,years,skills[],experiences[],education}`、`score`(0–100)、`verdict`(shortlist/hold/reject)、`matched[]{skill,evidence}`、`gaps[]`、`reason` | resume.parse · resume.score |
 | ③ | `interview.run` | 面试 | C 面试官 | `plan{questions[]{text,intent},rubric[]{dimension,weight}}` 或 `minutes{summary,qa[]{question,answer,score},verdict}` | interview.plan · interview.run |
-| ④ | `assess.review` | 测评·背调·文化匹配 | D 测评背调员 | `level`(expert/proficient/basic/none)、`score`(0–100)、`risk_level`(low/medium/high)、`findings[]{item,risk,evidence}`、`fit_score`(0–100)、`fills_gap[]`、`overlaps[]` | assess.skill · assess.integrity · assess.culture |
-| ⑤ | `offer.onboard` | offer 与入职 | E offer 管家 | `offer{position,salary_range,suggested,clauses[]}`、`plan{week1_4[],goals[]}`、`screening_feedback` | offer.generate · onboard.plan |
+| ④ | `assess.review` | 测评·背调·文化匹配 | D 测评背调员 | `level`(expert/proficient/basic/none)、`score`(0–100)、`risk_level`(low/medium/high)、`findings[]{item,risk,evidence}`、`fit_score`(0–100)、`fills_gap[]`、`overlaps[]`、`reason` | assess.skill · assess.integrity · assess.culture |
+| ⑤ | `offer.onboard` | offer 与入职 | E offer 管家 | `offer{position,salary_range,suggested,clauses[]}`、`plan{week1_4[],goals[]}`、`screening_feedback`、`reason` | offer.generate · onboard.plan |
 
 > 枚举/刻度：`verdict`=shortlist/hold/reject；`level`=expert/proficient/basic/none；`risk_level`=low/medium/high；评分统一 0–100。
 

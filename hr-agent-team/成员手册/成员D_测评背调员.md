@@ -9,7 +9,8 @@
 你在 `AssessorAgent` 的 `run()` 里产出：
 - `level`(expert/proficient/basic/none)、`score`(0–100)
 - `risk_level`(low/medium/high)、`findings[]{item,risk,evidence}`
-- `fit_score`(0–100)、`fills_gap[]`
+- `fit_score`(0–100)、`fills_gap[]`、`overlaps[]`
+- `reason`
 `level`/`risk_level` 严格取枚举；风险项必须带 `evidence`。字段照此，**不要自创**。
 
 ## 1.5 🎯 你的可验收成果（比赛硬要求：报告 / 表格 / 网页）
