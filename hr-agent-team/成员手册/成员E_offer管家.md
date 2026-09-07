@@ -10,6 +10,7 @@
 - `offer{ position, salary_range, suggested, clauses[] }`
 - `plan{ week1_4[], goals[] }`
 - `screening_feedback`（回写给筛选标准的改进建议）
+- `reason`
 字段照此，**不要自创**；薪资给区间并说明依据，不编造。
 
 ## 1.5 🎯 你的可验收成果（比赛硬要求：报告 / 表格 / 网页）

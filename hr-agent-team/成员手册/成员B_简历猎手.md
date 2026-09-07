@@ -6,9 +6,10 @@
 招聘流水线**第二步**：拿到 A 的 **JD**，读候选人简历 → 结构化 → 按 JD **打分**。上游 A，结果交给 C。
 
 ## 1. 你负责的内容与输出字段
-你在 `ScoutAgent` 的 `run()` 里产出（按 JD 给简历打分）：
+你在 `ScoutAgent` 的 `run()` 里产出（解析简历 + 打分，两件事一起）：
+- `resume{ name, years, skills[], experiences[], education }`（结构化简历，交给下游 C/D）
 - `score`(0–100)、`verdict`(shortlist/hold/reject)、`matched[]{skill,evidence}`、`gaps[]`、`reason`
-`verdict` 只能取 shortlist / hold / reject。字段照此，**不要自创**。
+`verdict` 只能取 shortlist / hold / reject。字段照此，**不要自创**。骨架已按此写好（含 resume 输出、校验与两份 CSV）。
 
 ## 1.5 🎯 你的可验收成果（比赛硬要求：报告 / 表格 / 网页）
 

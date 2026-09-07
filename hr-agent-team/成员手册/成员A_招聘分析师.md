@@ -7,10 +7,11 @@
 
 ## 1. 你负责的内容与输出字段
 你要在 `AnalystAgent` 的 `run()` 里产出：
+- `demand`（澄清后的需求陈述 + 待确认/追问清单 —— 对应"需求澄清说明"成果）
 - `jd{ title, responsibilities[], hard_requirements[], nice_to_have[] }`
 - `persona{ core_competencies[], soft_traits[], culture_fit_hint }`
 - `reason`
-字段照此，**不要自创**。`AnalystAgent` 已按"参考模板"写好骨架，你补 `ROLE` 和逻辑即可。
+字段照此，**不要自创**。`AnalystAgent` 骨架已按此写好（含 demand、doc_writer 落文件）。
 
 ## 1.5 🎯 你的可验收成果（比赛硬要求：报告 / 表格 / 网页）
 
