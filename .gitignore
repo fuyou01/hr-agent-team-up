@@ -15,6 +15,7 @@ demo/
 .env
 *.key
 application-local.properties
+hr-agent-team/data/
 
 # 杂项
 .DS_Store
