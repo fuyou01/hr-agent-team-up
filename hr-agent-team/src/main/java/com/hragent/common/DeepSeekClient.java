@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,7 +29,8 @@ public class DeepSeekClient {
     private static final String MODEL = System.getenv().getOrDefault("DEEPSEEK_MODEL", "deepseek-chat");
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private final HttpClient http = HttpClient.newHttpClient();
+    private final HttpClient http = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(3)).build();
 
     /** 返回模型输出的原始字符串。 */
     public String call(String rolePrompt, String userInput) {
@@ -62,6 +64,7 @@ public class DeepSeekClient {
         try {
             HttpRequest req = HttpRequest.newBuilder()
                     .uri(URI.create(API_URL))
+                    .timeout(Duration.ofSeconds(10))
                     .header("Authorization", "Bearer " + API_KEY)
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(MAPPER.writeValueAsString(body)))
@@ -137,8 +140,9 @@ public class DeepSeekClient {
     }
 
     private Map<String, Object> sendMessage(Map<String, Object> body) throws Exception {
-        HttpRequest req = HttpRequest.newBuilder()
-                .uri(URI.create(API_URL))
+                HttpRequest req = HttpRequest.newBuilder()
+                        .uri(URI.create(API_URL))
+                        .timeout(Duration.ofSeconds(10))
                 .header("Authorization", "Bearer " + API_KEY)
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(MAPPER.writeValueAsString(body)))
