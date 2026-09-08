@@ -117,15 +117,17 @@
 #### ⑦ AssessmentReport（综合测评）— D 产出，E 消费
 ```json
 {
-  "skill_level": "expert|proficient|basic|none",
-  "skill_score": 0,
-  "integrity_risk": "low|medium|high",
+  "level": "expert|proficient|basic|none",
+  "score": 0,
+  "risk_level": "low|medium|high",
   "findings": [{ "item": "string", "risk": "string", "evidence": "string" }],
-  "culture_fit": 0,
+  "fit_score": 0,
   "fills_gap": ["string"],
-  "verdict": "shortlist|hold|reject"
+  "overlaps": ["string"]
 }
 ```
+
+> 注：⑦ 字段名已按《SKILLS技能注册表》`assess.review` 统一为 `level / score / risk_level / findings / fit_score / fills_gap / overlaps`；旧 `skill_level / skill_score / integrity_risk / culture_fit / verdict` 不再使用。
 
 #### ⑧ Offer / OnboardingPlan（offer 与入职）— E 产出
 ```json
@@ -305,7 +307,7 @@ hr-agent-team/
 |---|---|
 | `verdict` | `shortlist` / `hold` / `reject` |
 | `risk_level` | `low` / `medium` / `high` |
-| `skill_level` | `expert` / `proficient` / `basic` / `none` |
+| `level` | `expert` / `proficient` / `basic` / `none` |
 | `task.status` | `pending` / `claimed` / `running` / `delivered` / `accepted` / `failed` / `escalated` |
 
 ---
